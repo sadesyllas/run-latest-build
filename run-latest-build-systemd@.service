@@ -1,0 +1,6 @@
+[Service]
+Type=simple
+ExecStart=/bin/run-latest-build.sh %i
+
+[Install]
+WantedBy=multi-user.target

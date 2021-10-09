@@ -22,8 +22,7 @@ while true; do
     continue
   fi
 
-  # Keep only two most recent builds.
-  ls "${BUILD_DIR}" | sort -r | sed -n '3,$p' | xargs -I{} rm -rf "${BUILD_DIR}/{}"
+  ls "${BUILD_DIR}" | sort -r | sed -n '2,$p' | xargs -I{} rm -rf "${BUILD_DIR}/{}"
 
   LATEST_BUILD_NAME="$(ls "${BUILD_DIR}" | sort -r | head -n 1)"
 

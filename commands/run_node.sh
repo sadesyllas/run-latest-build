@@ -4,7 +4,6 @@ set -eEuo pipefail
 
 BUILD_DIR="${1}"
 MY_NAME="$(basename "$0")"
-BUILD_NEEDLE="${BUILD_NEEDLE:-BUILD_NEEDLE}"
 MY_PID=$$
 VERBOSE=${VERBOSE:-0}
 
@@ -41,7 +40,7 @@ while is_active_port $PORT; do
   PORT=$[${PORT}+1]
 done
 
-echo "Running build ${BUILD_NAME} at port ${PORT}."
+echo "Running build ${BUILD_NAME} on port ${PORT}."
 
 cd "${BUILD_DIR}"
 
